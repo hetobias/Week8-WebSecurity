@@ -68,6 +68,16 @@ Vulnerability #1: Insecure Direct Object Reference (IDOR)
 2. Navigate into "Salespeople".
 3. Click show on one of the people and remember the "id=xx" part of the URL.
 4. Log out and access the public site and go to "Find a Salesperson" Click on one of the people and change the ID in the URL to the one you remember. It will now allow you to access that person. 
+***
 
 
-Vulnerability #2: __________________
+Vulnerability #2: Cross-Site Request Forgery (CSRF)
+
+![](https://github.com/hetobias/Week8-WebSecurity/blob/master/red_CSRF.gif)
+- Create an HTML file that will change the form.
+```<form name="hack" action="https://104.198.208.81/red/public/staff/salespeople/edit.php?id=1" method="post" target="hide"```
+
+### Steps to Replicate
+1. Log into Red page and go navigate to "Salespeople".
+2. Create an HTML file as shown [HTML](https://github.com/hetobias/Week8-WebSecurity/blob/master/hack.html)
+3. Open the HTML file and refresh the "Salespeople" page and the person with id=1 in URL should be changed.
