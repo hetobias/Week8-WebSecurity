@@ -1,6 +1,6 @@
 # Project 8 - Pentesting Live Targets
 
-Time spent: **X** hours spent in total
+Time spent: **5** hours spent in total
 
 > Objective: Identify vulnerabilities in three different versions of the Globitek website: blue, green, and red.
 
@@ -25,6 +25,7 @@ Vulnerability #1: SQL Injection
 1. Access the "Find a Salesperson" tab
 2. Click on any person
 3. In the URL add ```' OR SLEEP(10)=0--'``` to the end.
+***
 
 
 
@@ -39,22 +40,34 @@ Vulnerability #2: Session Hijacking/Fixation
 3. Open another browser that is not the one used in step 1. And access this ```https://104.198.208.81/blue/public/hacktools/change_session_id.php```
 4. Copy and paste the session obtained in step 2 into the Blue page session and change it.
 5. Click log in on Blue page and you should automatically be logged in without inputting any user credentials.
+***
 
 
 ## Green
 
-Vulnerability #1: __________________
+Vulnerability #1: User Enumeration
 
-Vulnerability #2: __________________
+![](https://github.com/hetobias/Week8-WebSecurity/blob/master/green_userenum.gif)
+- When inputting correct username and incorrect password it will show "Log in was unsuccesful" in bold. If the username was incorrect the message will not be in bold.
+***
+
+Vulnerability #2: Cross-Site Scripting
+
+![](
 
 
 ## Red
 
-Vulnerability #1: __________________
+Vulnerability #1: Insecure Direct Object Reference (IDOR)
+
+![](https://github.com/hetobias/Week8-WebSecurity/blob/master/red_IDOR.gif)
+- This vulnerability allows public user to access pages that are not intended for them.
+
+### Steps to Replicate
+1. Log into the Red page.
+2. Navigate into "Salespeople".
+3. Click show on one of the people and remember the "id=xx" part of the URL.
+4. Log out and access the public site and go to "Find a Salesperson" Click on one of the people and change the ID in the URL to the one you remember. It will now allow you to access that person. 
+
 
 Vulnerability #2: __________________
-
-
-## Notes
-
-Describe any challenges encountered while doing the work
