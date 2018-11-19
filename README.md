@@ -53,7 +53,14 @@ Vulnerability #1: User Enumeration
 
 Vulnerability #2: Cross-Site Scripting
 
-![](
+![](https://github.com/hetobias/Week8-WebSecurity/blob/master/green_cross.gif)
+- Adding the script tag into the feedback section will allow us to inject it.
+
+### Steps to Replicate
+1. Access the Green page
+2. Leave a feedback, in the comments use ```<script>alert('insert text here');</script>``` 
+3. Log into the Green page and navigate to Feedbacks. You should see the alert pop up.
+***
 
 
 ## Red
